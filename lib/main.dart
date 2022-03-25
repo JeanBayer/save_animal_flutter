@@ -20,8 +20,9 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData.from(
             colorScheme: ColorScheme.fromSwatch().copyWith(
-          primary: const Color.fromRGBO(34, 34, 59, 1),
-          background: const Color.fromRGBO(34, 34, 59, 1),
+          primary: Colors.black,
+          secondary: const Color.fromARGB(255, 39, 35, 35),
+          background: Colors.black,
         )),
         home: const MyHomePage(),
       ),
