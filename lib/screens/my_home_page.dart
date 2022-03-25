@@ -1,3 +1,4 @@
+import 'package:app_save_animals/screens/animals_region_screen.dart';
 import 'package:app_save_animals/widgets/grid_regions_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -45,7 +46,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Column(
                   children: [
                     const CarrouselHeaderWidget(),
-                    GridRegionsWidgets(data: value),
+                    Container(
+                      margin: const EdgeInsets.only(top: 20),
+                      child: GridRegionsWidgets(
+                        data: value.region,
+                        withScroll: false,
+                      ),
+                    ),
                   ],
                 ),
               ),

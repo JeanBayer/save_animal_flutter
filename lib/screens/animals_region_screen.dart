@@ -1,6 +1,7 @@
 import 'package:app_save_animals/models/region_model.dart';
 import 'package:app_save_animals/providers/animals.dart';
 import 'package:app_save_animals/widgets/animal_card_widget.dart';
+import 'package:app_save_animals/widgets/grid_regions_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
@@ -22,7 +23,7 @@ class _AnimalsRegionScreenState extends State<AnimalsRegionScreen> {
   }
 
   @override
-  void initState() { 
+  void initState() {
     super.initState();
 
     _obtainedEarlier = _runFuture();
@@ -45,18 +46,9 @@ class _AnimalsRegionScreenState extends State<AnimalsRegionScreen> {
               );
             } else {
               return Consumer<Animals>(
-                builder: (_, value, child) => GridView.builder(
-                  padding: const EdgeInsets.all(20),
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 30,
-                    mainAxisSpacing: 30,
-                    childAspectRatio: 3 / 2,
-                  ),
-                  itemCount: value.animal.length,
-                  itemBuilder: (ctx, i) {
-                    return AnimalCardWidget(name: value.animal[i].name);
-                  },
+                builder: (_, value, child) => GridRegionsWidgets(
+                  data: value.animal,
+                  withScroll: true,
                 ),
               );
             }
