@@ -26,10 +26,10 @@ class Animals with ChangeNotifier {
 
     final response = await http.get(Uri.parse(url));
     final extractedData = jsonDecode(response.body)["result"] as List<dynamic>;
-    extractedData.forEach((element) {
+    for (var element in extractedData) {
       temp.add(AnimalsModel(
           id: element["taxonid"], name: element["scientific_name"]));
-    });
+    }
     temp.shuffle();
     _animal = temp.sublist(0, 20);
     notifyListeners();
@@ -41,11 +41,10 @@ class Animals with ChangeNotifier {
 
     final response = await http.get(Uri.parse(url));
     final extractedData = jsonDecode(response.body)["results"] as List<dynamic>;
-    extractedData.forEach((region) {
+    for (var region in extractedData) {
       temp.add(RegionModel(id: region["identifier"], name: region["name"]));
-    });
+    }
     _region = temp;
-    print(_region[0].name);
     notifyListeners();
   }
 }

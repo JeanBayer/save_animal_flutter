@@ -22,8 +22,7 @@ class _AnimalsRegionScreenState extends State<AnimalsRegionScreen> {
   }
 
   @override
-  void initState() {
-    // TODO: implement initState
+  void initState() { 
     super.initState();
 
     _obtainedEarlier = _runFuture();
