@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:app_save_animals/providers/animals.dart';
-import 'package:app_save_animals/my_home_page.dart';
+import 'package:app_save_animals/screens/my_home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,14 +15,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (context) => Animals())
-      ],
+      providers: [ChangeNotifierProvider(create: (context) => Animals())],
       child: MaterialApp(
         title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
+        theme: ThemeData.from(
+            colorScheme: ColorScheme.fromSwatch().copyWith(
+          primary: const Color.fromRGBO(34, 34, 59, 1),
+          background: const Color.fromRGBO(34, 34, 59, 1),
+        )),
         home: const MyHomePage(),
       ),
     );
