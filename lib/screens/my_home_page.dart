@@ -1,3 +1,4 @@
+import 'package:app_save_animals/models/region_model.dart';
 import 'package:app_save_animals/screens/animals_region_screen.dart';
 import 'package:app_save_animals/widgets/grid_regions_widget.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,16 @@ class _MyHomePageState extends State<MyHomePage> {
   Future _runFuture() async {
     return await Provider.of<Animals>(context, listen: false)
         .fetchAndSetRegions();
+  }
+
+  void onPressed(RegionModel region) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (BuildContext context) => AnimalsRegionScreen(
+          region: region,
+        ),
+      ),
+    );
   }
 
   @override
@@ -51,6 +62,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: GridRegionsWidgets(
                         data: value.region,
                         withScroll: false,
+                        onPressed: (region) {
+                          onPressed(region);
+                        },
                       ),
                     ),
                   ],

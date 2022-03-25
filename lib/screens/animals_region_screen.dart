@@ -16,6 +16,9 @@ class AnimalsRegionScreen extends StatefulWidget {
 
 class _AnimalsRegionScreenState extends State<AnimalsRegionScreen> {
   Future? _obtainedEarlier;
+  void onPressed(value) {
+    print("${value.name}");
+  }
 
   Future _runFuture() async {
     return await Provider.of<Animals>(context, listen: false)
@@ -49,6 +52,9 @@ class _AnimalsRegionScreenState extends State<AnimalsRegionScreen> {
                 builder: (_, value, child) => GridRegionsWidgets(
                   data: value.animal,
                   withScroll: true,
+                  onPressed: (value) {
+                    onPressed(value);
+                  },
                 ),
               );
             }

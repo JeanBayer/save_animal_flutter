@@ -6,11 +6,12 @@ import 'package:app_save_animals/providers/animals.dart';
 class GridRegionsWidgets extends StatelessWidget {
   final List data;
   final bool withScroll;
-
+  final ValueChanged onPressed;
   const GridRegionsWidgets({
     Key? key,
     required this.data,
     required this.withScroll,
+    required this.onPressed,
   }) : super(key: key);
 
   @override
@@ -30,13 +31,7 @@ class GridRegionsWidgets extends StatelessWidget {
         return GestureDetector(
           child: AnimalCardWidget(name: data[i].name),
           onTap: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (BuildContext context) => AnimalsRegionScreen(
-                  region: data[i],
-                ),
-              ),
-            );
+            onPressed(data[i]);
           },
         );
       },
