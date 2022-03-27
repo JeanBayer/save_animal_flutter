@@ -1,10 +1,10 @@
+import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:provider/provider.dart';
+
 import 'package:app_save_animals/models/region_model.dart';
 import 'package:app_save_animals/providers/animals.dart';
-import 'package:app_save_animals/widgets/animal_card_widget.dart';
 import 'package:app_save_animals/widgets/grid_regions_widget.dart';
-import 'package:flutter/material.dart';
-
-import 'package:provider/provider.dart';
 
 class AnimalsRegionScreen extends StatefulWidget {
   final RegionModel region;
@@ -16,8 +16,14 @@ class AnimalsRegionScreen extends StatefulWidget {
 
 class _AnimalsRegionScreenState extends State<AnimalsRegionScreen> {
   Future? _obtainedEarlier;
-  void onPressed(value) {
-    print("${value.name}");
+  void onPressed(value) async {
+    final String _url = 'https://www.google.com/search?q=${value.name}';
+    if (!await launch(
+      _url,
+      forceSafariVC: true,
+      forceWebView: true,
+      enableJavaScript: true,
+    )) throw 'Could not launch $_url';
   }
 
   Future _runFuture() async {

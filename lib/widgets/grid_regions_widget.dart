@@ -1,7 +1,5 @@
-import 'package:app_save_animals/screens/animals_region_screen.dart';
 import 'package:app_save_animals/widgets/animal_card_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:app_save_animals/providers/animals.dart';
 
 class GridRegionsWidgets extends StatelessWidget {
   final List data;
@@ -17,7 +15,7 @@ class GridRegionsWidgets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      physics: withScroll ? ScrollPhysics() : NeverScrollableScrollPhysics(),
+      physics: withScroll ? const ScrollPhysics() : const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       padding: const EdgeInsets.all(20),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -31,7 +29,7 @@ class GridRegionsWidgets extends StatelessWidget {
         return GestureDetector(
           child: AnimalCardWidget(name: data[i].name),
           onTap: () {
-            onPressed(data[i]);
+             onPressed(data[i]);
           },
         );
       },

@@ -1,10 +1,10 @@
-import 'package:app_save_animals/models/region_model.dart';
-import 'package:app_save_animals/screens/animals_region_screen.dart';
-import 'package:app_save_animals/widgets/grid_regions_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:app_save_animals/providers/animals.dart';
+import 'package:app_save_animals/models/region_model.dart';
+import 'package:app_save_animals/screens/animals_region_screen.dart';
+import 'package:app_save_animals/widgets/grid_regions_widget.dart';
 import 'package:app_save_animals/widgets/carousel_header_widget.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -15,6 +15,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
   Future? _obtainedEarlier;
   Future _runFuture() async {
     return await Provider.of<Animals>(context, listen: false)
