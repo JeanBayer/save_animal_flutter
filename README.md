@@ -1,16 +1,24 @@
-# app_save_animals
+# App Save Animals
 
-A new Flutter project.
+This App uses the [IUCN Red List API](https://apiv3.iucnredlist.org/), which gives us a lot of information about animals in danger of extinction, I decided to make the mobile version of [dayan's](https://github.com/dayanMichelle) website, using flutter, the application is very basic and will be constantly renewed
 
-## Getting Started
+- State management with Provider
+- API connection with GET method
+- Open browser in webview mode
 
-This project is a starting point for a Flutter application.
+![image](https://github.com/JeanBayer/img_save_animals/blob/main/ezgif.com-gif-maker.gif)
 
-A few resources to get you started if this is your first Flutter project:
+## About me
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+I'm a software developer, currently developing web applications with react and cross-platform applications with flutter, my skills:
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- React JS / Next JS
+- Javascript / Typescript
+- Node JS / Express JS
+- CSS / Bootstrap
+- HTML / Semantic HTML
+- Mongo DB / Sqlite / MySql
+- Git / Github
+- Flutter / State management with Provider
+- Python
+- Scrum 
